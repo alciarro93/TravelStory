@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<resources>
+  <color name="primary">#009688</color>
+  <color name="primaryDark">#00796B</color>
+  <color name="accent">#FBC02D</color>
+  <color name="window_background">#F5F5F5</color>
+
+  <color name="entry_background">#ffffff</color>
+  <color name="entry_border">#212121</color>
+  <color name="entry_border_error">#E53935</color>
+  
+</resources>
