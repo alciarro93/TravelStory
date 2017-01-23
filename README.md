@@ -1,6 +1,7 @@
 # TravelStory
 TravelStory is directed to a traveler who likes keep track of his journeys, through GPS location, photos, videos and notes.
-All these stuff are saved locally and remotely with Microsoft Azure
+All these stuff are saved locally and remotely with Microsoft Azure.
+Full presentation [[here](http://www.slideshare.net/AlessioCiarrocchi/short-presentation-64432456)]
 
 ## Tools
 - Xamarin.Forms [[Website](https://www.xamarin.com/forms)]
