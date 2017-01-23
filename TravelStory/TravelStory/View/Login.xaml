@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="TravelStory.View.Login"
+             Title ="{Binding PageTitle}">
+  <ContentPage.Content>
+    <ScrollView>
+
+      <StackLayout BackgroundColor="#F5F5F5">
+        <StackLayout Padding="30" Spacing="20">
+          <Entry x:Name="EmailEntry" Placeholder="Username" Text="{Binding Username}" Keyboard="Email"/>
+          <Entry x:Name="PasswordEntry" Placeholder="Password" Text="{Binding Password}" IsPassword="true" Keyboard="Default"/>
+          <Button x:Name="LoginButton" Text="{Binding Login}" TextColor="#262626" BackgroundColor="#FBC02D"
+                  IsEnabled="{Binding EnableLoginBtn}" Command="{Binding LoginCmd, Mode=TwoWay}" />
+
+          <Button x:Name="RegisterUserBtn" Text="{Binding RegisterUser}" TextColor="#262626" BackgroundColor="#4CAF50"
+                   IsEnabled="{Binding EnableLoginBtn}"/>
+        </StackLayout>
+      </StackLayout>
+
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

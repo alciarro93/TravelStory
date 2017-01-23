@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:controls="clr-namespace:TravelStory.Model;assembly=TravelStory" x:Name="this"
+             x:Class="TravelStory.View.MediaDetail"
+             Title ="{Binding PageTitle}">
+
+  <ContentPage.ToolbarItems>
+    <!--Dettaglio media items toolbar-->
+    <controls:HideableToolbarItem  x:Name="DeleteMediaBtn" Icon="Trash.png" IsVisible="{Binding ShowDel}" Parent="{x:Reference this}"
+                                   Command="{Binding DeleteMediaCmd, Mode=TwoWay}"
+                                   Order="Primary" Priority="0" />
+
+    <controls:HideableToolbarItem  x:Name="SaveMediaBtn" Icon="Save.png" IsVisible="{Binding ShowSave}" Parent="{x:Reference this}"
+                                   Command="{Binding SaveMediaCmd, Mode=TwoWay}"
+                                   Order="Primary" Priority="1" />
+  </ContentPage.ToolbarItems>
+  
+  <ContentPage.Content>
+    <ScrollView Orientation="Vertical" Padding="5">
+      <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#FAFAFA">
+
+        <!--Data-->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+          <Label Text="{Binding Data}" FontAttributes="Bold" FontSize="Large" TextColor="#262626"/>
+        </StackLayout>
+
+        <!--Testo-->
+        <StackLayout HorizontalOptions="FillAndExpand" Padding="5">
+          <StackLayout HorizontalOptions="Center">
+            <Label Text="{Binding LabelDescription}" TextColor="#262626" FontSize="15"/>
+          </StackLayout>
+          <Editor x:Name="EditorText" Text="{Binding Description}" HeightRequest="100" TextColor="#262626" BackgroundColor="#f2f2f2"/>
+        </StackLayout>
+
+        <!--Foto / Video-->
+        <StackLayout Padding="5">
+          <Image x:Name="ImageImg" Aspect="AspectFit" Source="{Binding FileImage}" IsVisible="{Binding imgVis}">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding OpenPromptPhotoCmd, Mode=TwoWay}"></TapGestureRecognizer>
+            </Image.GestureRecognizers>
+          </Image>
+          <StackLayout HorizontalOptions="Center">
+            <Label Text="{Binding InfoImage}" TextColor="#b3b3b3" FontSize="13" IsVisible="{Binding LabelInfoImage}"/>
+          </StackLayout>
+
+          <!--<Image x:Name="ImageImg" Aspect="AspectFit" Source="{Binding FileImage}" IsVisible="{Binding imgVis}"/>-->
+          <Button x:Name="VideoBtn" Text="{Binding PlayMedia}" Command="{Binding PlayMediaCmd, Mode=TwoWay}" TextColor ="#262626" IsVisible="{Binding videoVis}"></Button>
+          <Button x:Name="DeleteVideo" Text="{Binding DeleteVideo}" Command="{Binding DeleteVideoCmd, Mode=TwoWay}" TextColor ="#262626" IsVisible="{Binding DelVideoVis}"></Button>
+          <Button x:Name="AddMediaBtn" Text="{Binding AddMedia}" Command="{Binding AddMediaCmd, Mode=TwoWay}" TextColor ="#262626" IsVisible="{Binding addMediaVis}"></Button>
+        </StackLayout>
+
+        <!--Mappa-->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" HeightRequest="200" Padding="5">
+          <maps:Map VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                x:Name="MapDetail"
+                IsShowingUser="False"
+                MapType="Hybrid"/>
+        </StackLayout>      
+
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+  
+</ContentPage>

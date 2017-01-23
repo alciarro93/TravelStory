@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Delete" xml:space="preserve">
+    <value>Elimina</value>
+  </data>
+  <data name="CloseTravel" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="EndTravel" xml:space="preserve">
+    <value>Concludi Viaggio</value>
+  </data>
+  <data name="CurrTravel" xml:space="preserve">
+    <value>Viaggio Attuale</value>
+  </data>
+  <data name="DetailMedia" xml:space="preserve">
+    <value>Dettaglio Media</value>
+  </data>
+  <data name="ErrFirstMedia" xml:space="preserve">
+    <value>La prima posizione non si può cancellare!</value>
+  </data>
+  <data name="HintTravelTitle" xml:space="preserve">
+    <value>Titolo del viaggio</value>
+  </data>
+  <data name="HintUsername" xml:space="preserve">
+    <value>Nome completo</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Impostazioni</value>
+  </data>
+  <data name="StartTravel" xml:space="preserve">
+    <value>Inizia Viaggio</value>
+  </data>
+  <data name="GettingPos" xml:space="preserve">
+    <value>Localizzazione in corso..</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Mappa</value>
+  </data>
+  <data name="MexDelTravel" xml:space="preserve">
+    <value>Vuoi eliminare questo viaggio?</value>
+  </data>
+  <data name="GPSMex" xml:space="preserve">
+    <value>L'applicazione vuole cambiare le seguenti impostazioni:@@Usare GPS, Wi-Fi e reti mobili per la localizzazione</value>
+  </data>
+  <data name="ShowPins" xml:space="preserve">
+    <value>Mostra Percorso</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>NO</value>
+  </data>
+  <data name="TakePhoto" xml:space="preserve">
+    <value>Foto</value>
+  </data>
+  <data name="GetPosition" xml:space="preserve">
+    <value>Ottieni Posizione</value>
+  </data>
+  <data name="TakeVideo" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="Play" xml:space="preserve">
+    <value>Riprodurre Video</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Salva</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>SI</value>
+  </data>
+  <data name="LabelDesc" xml:space="preserve">
+    <value>Descrizione</value>
+  </data>
+  <data name="TitleConfMex" xml:space="preserve">
+    <value>Conferma</value>
+  </data>
+  <data name="TitleGPSMex" xml:space="preserve">
+    <value>Usare localizzazione?</value>
+  </data>
+  <data name="Travels" xml:space="preserve">
+    <value>Viaggi Conclusi</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Indietro</value>
+  </data>
+  <data name="Languages" xml:space="preserve">
+    <value>Lingue</value>
+  </data>
+  <data name="SaveUsername" xml:space="preserve">
+    <value>Salva username</value>
+  </data>
+  <data name="SearchTitle" xml:space="preserve">
+    <value>Ricerca titolo viaggio</value>
+  </data>
+  <data name="MexDelMedia" xml:space="preserve">
+    <value>Vuoi eliminare questa sosta?</value>
+  </data>
+  <data name="EditTravel" xml:space="preserve">
+    <value>Modifica viaggio</value>
+  </data>
+  <data name="MexEndTravel" xml:space="preserve">
+    <value>Vuoi concludere questo viaggio?</value>
+  </data>
+  <data name="Media" xml:space="preserve">
+    <value>Contenuto</value>
+  </data>
+  <data name="Travel" xml:space="preserve">
+    <value>Viaggio</value>
+  </data>
+  <data name="TakeNote" xml:space="preserve">
+    <value>Prendi una nota ...</value>
+  </data>
+  <data name="TakeNotePage" xml:space="preserve">
+    <value>Prendi nota</value>
+  </data>
+  <data name="Alert" xml:space="preserve">
+    <value>Allerta</value>
+  </data>
+  <data name="AlertErrMex" xml:space="preserve">
+    <value>Nota errata</value>
+  </data>
+  <data name="Note" xml:space="preserve">
+    <value>Nota</value>
+  </data>
+  <data name="TakeNotePlaceholder" xml:space="preserve">
+    <value>Inizia a scrivere una nota...</value>
+  </data>
+  <data name="AddMedia" xml:space="preserve">
+    <value>Aggiungi file media</value>
+  </data>
+  <data name="AddPhoto" xml:space="preserve">
+    <value>Aggiungi Photo</value>
+  </data>
+  <data name="AddVideo" xml:space="preserve">
+    <value>Aggiungi Video</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancella</value>
+  </data>
+  <data name="NoMedia" xml:space="preserve">
+    <value>Nessun contenuto è presente</value>
+  </data>
+  <data name="At" xml:space="preserve">
+    <value>alle</value>
+  </data>
+  <data name="ExitApp" xml:space="preserve">
+    <value>Uscita</value>
+  </data>
+  <data name="delPhoto" xml:space="preserve">
+    <value>Elimina Foto</value>
+  </data>
+  <data name="openPhoto" xml:space="preserve">
+    <value>Apri Foto</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Inserisci</value>
+  </data>
+  <data name="Photo" xml:space="preserve">
+    <value>Foto</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="NoInternet" xml:space="preserve">
+    <value>Nessuna connessione internet attiva.</value>
+  </data>
+  <data name="DecodeAdd" xml:space="preserve">
+    <value>Calcola indirizzi</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Utente</value>
+  </data>
+  <data name="AlertErrMexLogin" xml:space="preserve">
+    <value>Username e/o Password errati</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Avviso</value>
+  </data>
+  <data name="MexLogout" xml:space="preserve">
+    <value>Vuoi effettuare il logout?</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Disconnetti utente</value>
+  </data>
+  <data name="SyncTravls" xml:space="preserve">
+    <value>Sincronizza online</value>
+  </data>
+  <data name="Logging" xml:space="preserve">
+    <value>Login in corso..</value>
+  </data>
+  <data name="RegisterUser" xml:space="preserve">
+    <value>Crea nuovo account</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PasswordRepeat" xml:space="preserve">
+    <value>Ripeti password</value>
+  </data>
+  <data name="SameAccount" xml:space="preserve">
+    <value>Account già esistente</value>
+  </data>
+  <data name="Surname" xml:space="preserve">
+    <value>Cognome</value>
+  </data>
+  <data name="CreatingAccount" xml:space="preserve">
+    <value>Creazione account..</value>
+  </data>
+  <data name="IncEmail" xml:space="preserve">
+    <value>Email non valida</value>
+  </data>
+  <data name="IncMandatory" xml:space="preserve">
+    <value>Completa tutti i campi obbligatori</value>
+  </data>
+  <data name="IncPsw" xml:space="preserve">
+    <value>Password non corrispondenti</value>
+  </data>
+  <data name="MandatoryEntries" xml:space="preserve">
+    <value>Campi obbligatori</value>
+  </data>
+  <data name="AccountCreated" xml:space="preserve">
+    <value>Account creato</value>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="Loggedin" xml:space="preserve">
+    <value>Login effettuato con successo</value>
+  </data>
+  <data name="SearchingGPS" xml:space="preserve">
+    <value>Ricerca GPS in corso...</value>
+  </data>
+  <data name="Success" xml:space="preserve">
+    <value>Successo</value>
+  </data>
+  <data name="AccountUpdated" xml:space="preserve">
+    <value>Profilo aggiornato</value>
+  </data>
+  <data name="EditProfile" xml:space="preserve">
+    <value>Modifica info</value>
+  </data>
+  <data name="ErrorOldPsWMatch" xml:space="preserve">
+    <value>La vecchia password non corrisponde</value>
+  </data>
+  <data name="LeaveEntriesBlank" xml:space="preserve">
+    <value>Lasciare vuoto per non cambiare password</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Nuova password</value>
+  </data>
+  <data name="NewPasswordRepeat" xml:space="preserve">
+    <value>Ripeti la nuova password</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Vecchia password</value>
+  </data>
+  <data name="UpdateUser" xml:space="preserve">
+    <value>Aggiorna info</value>
+  </data>
+  <data name="UpdatingAccount" xml:space="preserve">
+    <value>Aggiornando il profilo...</value>
+  </data>
+  <data name="EditTitle" xml:space="preserve">
+    <value>Modifica titolo</value>
+  </data>
+  <data name="NewTitle" xml:space="preserve">
+    <value>Inserire il nuovo titolo...</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Dettaglio</value>
+  </data>
+  <data name="SyncOK" xml:space="preserve">
+    <value>Sincronizzazione effettuata</value>
+  </data>
+  <data name="NoStops" xml:space="preserve">
+    <value>Nessuna sosta presente!</value>
+  </data>
+  <data name="SyncText" xml:space="preserve">
+    <value>Sincronizzazione automatica:</value>
+  </data>
+  <data name="SyncOnGoing" xml:space="preserve">
+    <value>Sincronizzazione in corso</value>
+  </data>
+  <data name="DeleteVideo" xml:space="preserve">
+    <value>Elimina Video</value>
+  </data>
+  <data name="MexDelFile" xml:space="preserve">
+    <value>Vuoi eliminare questo file?</value>
+  </data>
+  <data name="ErrNewTitle" xml:space="preserve">
+    <value>Formato errato!</value>
+  </data>
+  <data name="InfoImage" xml:space="preserve">
+    <value>Premere l'immagine per aprire le opzioni.</value>
+  </data>
+  <data name="InfoEmptyTravel" xml:space="preserve">
+    <value>Usa i bottoni in basso per aggiungere soste al tuo viaggio</value>
+  </data>
+  <data name="DateFormatPickerTitle" xml:space="preserve">
+    <value>Formato data</value>
+  </data>
+  <data name="DateFrom" xml:space="preserve">
+    <value>Dal:</value>
+  </data>
+  <data name="DateTo" xml:space="preserve">
+    <value>Al:</value>
+  </data>
+  <data name="GeneralSettings" xml:space="preserve">
+    <value>Generali</value>
+  </data>
+  <data name="ShowFilters" xml:space="preserve">
+    <value>Mostra i filtri</value>
+  </data>
+  <data name="newPhoto" xml:space="preserve">
+    <value>Apri fotocamera</value>
+  </data>
+  <data name="newVideo" xml:space="preserve">
+    <value>Apri videocamera</value>
+  </data>
+  <data name="pickPhoto" xml:space="preserve">
+    <value>Scegli foto dalla galleria</value>
+  </data>
+  <data name="pickVideo" xml:space="preserve">
+    <value>Scegli video dalla galleria</value>
+  </data>
+</root>

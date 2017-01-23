@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TravelStory.View.Home"
+             Title="{Binding PageTitle}">
+  
+  <StackLayout BackgroundColor="#F5F5F5">
+    <StackLayout Padding="20">
+        <Entry x:Name="TravelTitleEntry" Placeholder="{Binding HintTravelTitle}" PlaceholderColor="#b3b3b3" 
+                TextColor ="#262626" Text="{Binding TravelTitle, Mode=TwoWay}"></Entry>
+        <Button x:Name="StartTravelBtn" Text="{Binding StartTravel}" Command="{Binding StartTravelCmd, Mode=TwoWay}" 
+                TextColor ="#262626" BackgroundColor="#FBC02D"></Button>
+    </StackLayout>
+  </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:TravelStory.Model;assembly=TravelStory" x:Name="this"
+             x:Class="TravelStory.View.HomeTravel"
+             Title="{Binding PageTitle}">
+
+  <ContentPage.ToolbarItems>
+    <controls:HideableToolbarItem  x:Name="RouteBtn" Icon="Route.png" IsVisible="{Binding ShowAlways}" Parent="{x:Reference this}"
+                                   Command="{Binding ShowPinsCmd, Mode=TwoWay}"
+                                   Order="Primary" Priority="0" />
+    
+    <controls:HideableToolbarItem  x:Name="EndBtn" Icon="End.png" IsVisible="{Binding ShowCurrTravel}" Parent="{x:Reference this}"
+                                   Command="{Binding EndCmd, Mode=TwoWay}"
+                                   Order="Secondary" Priority="3" />
+    
+    <controls:HideableToolbarItem  x:Name="DeleteBtn" Icon="Trash.png" IsVisible="{Binding ShowAlways}" Parent="{x:Reference this}"
+                                   Command="{Binding DelTravelCmd, Mode=TwoWay}"
+                                   Order="Secondary" Priority="2" />
+
+    <controls:HideableToolbarItem  x:Name="DecodeAddBtn" Icon="DecodeAdd.png" IsVisible="{Binding ShowAlways}" Parent="{x:Reference this}"
+                                   Command="{Binding DecodeAddCmd, Mode=TwoWay}"
+                                   Order="Secondary" Priority="1" />
+    
+    <controls:HideableToolbarItem  x:Name="EditTitleBtn" Icon="EditTitle.png" IsVisible="{Binding ShowAlways}" Parent="{x:Reference this}"
+                                   Command="{Binding EditTitleCmd, Mode=TwoWay}"
+                                   Order="Secondary" Priority="0" />
+  </ContentPage.ToolbarItems>
+  
+  <ContentPage.Content>
+    <StackLayout x:Name="StackMedia"  VerticalOptions="FillAndExpand" BackgroundColor="#f2f2f2">
+      <ListView x:Name="MediaCurrTravelLV"
+                SeparatorVisibility="None"
+                HasUnevenRows="True"
+                ItemsSource="{Binding MediaCurrTravel}"
+                IsPullToRefreshEnabled="True"
+                RefreshCommand="{Binding ReloadUI}"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ImageCell
+                ImageSource="{Binding ImageList}"
+                Text="{Binding TimeStampString}"
+                Detail="{Binding CompleteAddress}">
+            </ImageCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+
+      <StackLayout Orientation="Horizontal" HorizontalOptions="Center" IsVisible="{Binding StackInfoEmtyTravel}">
+        <Label Text="{Binding InfoEmptyTravel}" TextColor="#b3b3b3" FontSize="20"/>
+      </StackLayout>
+    
+      <!--Aggiungi media al viaggio-->
+      <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                   HeightRequest="48" BackgroundColor="#ffffff" 
+                   IsVisible="{Binding VisAddMedia}" IsEnabled="{Binding EnableAddMedia}">
+
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Padding="5">
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding TakeNoteCmd, Mode=TwoWay}"></TapGestureRecognizer>
+          </StackLayout.GestureRecognizers>
+          <Label x:Name="TakeNoteBtn" Text="{Binding TakeNote}" TextColor ="#b3b3b3" 
+                 FontSize="16" FontAttributes="Italic" BackgroundColor="#ffffff"> </Label>
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+          <Image x:Name="PhotoBtn" Aspect="AspectFit" WidthRequest="60" Scale="0.9" Source="{Binding PhotoSource}">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding TakePhotoCmd, Mode=TwoWay}"></TapGestureRecognizer>
+            </Image.GestureRecognizers>
+          </Image>
+
+          <Image x:Name="VideoBtn" Aspect="AspectFit" WidthRequest="60" Scale="0.9" Source="{Binding VideoSource}">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding TakeVideoCmd, Mode=TwoWay}"></TapGestureRecognizer>
+            </Image.GestureRecognizers>
+          </Image>
+
+          <Image x:Name="LocationBtn" Aspect="AspectFit" WidthRequest="60" Scale="1.1" Source="{Binding LocationSource}">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding GetPositionCmd, Mode=TwoWay}"></TapGestureRecognizer>
+            </Image.GestureRecognizers>
+          </Image>
+        </StackLayout>
+        
+      </StackLayout>
+      
+      <!--Modifica titolo viaggio-->
+      <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                   HeightRequest="48" BackgroundColor="#ffffff"
+                   IsVisible="{Binding VisEditTitle}" Padding="3">
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Start">
+          <Image Aspect="AspectFit" WidthRequest="30" Scale="1" Source="{Binding CancelSource}">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding EditTitleCmd, Mode=TwoWay}"></TapGestureRecognizer>
+            </Image.GestureRecognizers>
+          </Image>
+        </StackLayout>
+        
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+          <Entry Placeholder="{Binding NewTitle}" PlaceholderColor="#b3b3b3" TextColor ="#262626" 
+                 Text="{Binding NewTitleTravel, Mode=TwoWay}"></Entry>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+          <Button Text="{Binding Save}" Command="{Binding ChangeTitleCmd, Mode=TwoWay}"
+                  TextColor ="#262626" BackgroundColor="#FBC02D"></Button>
+        </StackLayout>
+      </StackLayout>
+      
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

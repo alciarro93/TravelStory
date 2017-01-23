@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TravelStory.Model;assembly=TravelStory"
+             x:Class="TravelStory.View.Menu"
+             Title="Menu">
+  <ContentPage.Content>
+    <StackLayout x:Name="StackMenu"  VerticalOptions="FillAndExpand" BackgroundColor="#ffffff">
+
+      <!-- INIZIO HEADER -->
+      <StackLayout Orientation="Vertical" VerticalOptions="Start" BackgroundColor="#FBC02D" HeightRequest="170">
+        <StackLayout Orientation="Horizontal" Padding="15"
+                     HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand">
+          <StackLayout.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding ChangeUserCmd, Mode=TwoWay}"></TapGestureRecognizer>
+          </StackLayout.GestureRecognizers>
+          <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+            <Label Text="{Binding CompleteName}" TextColor ="#ffffff"
+                   FontAttributes="Bold" FontSize="16"></Label>
+            <Label Text="{Binding Username}" TextColor ="#737373"></Label>
+          </StackLayout>
+          <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+            <Image Source="{Binding ExpandSource}"
+                   WidthRequest="30"
+                   HeightRequest="30"
+                   Scale="0.7"
+                   IsVisible="{Binding ExpandVisible}"/>
+            <Image Source="{Binding CollapseSource}"
+                   WidthRequest="30"
+                   HeightRequest="30"
+                   Scale="0.7"
+                   IsVisible="{Binding CollapseVisible}"/>
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+      <!-- FINE HEADER -->
+
+      <ListView x:Name="MenuPageLV"
+                SeparatorVisibility="None"
+                RowHeight="65"
+                ItemsSource="{Binding MenuItems}"
+                
+                IsVisible="{Binding ListViewPages}">
+        <ListView.ItemTemplate>
+          <DataTemplate>
+            <ViewCell>
+              <StackLayout Orientation="Horizontal" BackgroundColor="#ffffff">
+                <Image Source="{Binding PageIcon}"
+                       WidthRequest="70"
+                       HeightRequest="30"
+                       Scale="0.7"/>
+                <Label Text="{Binding PageName}"
+                       TextColor="#262626"
+                       FontAttributes="Bold"
+                       FontSize="14"
+                       VerticalOptions="Center"
+                       HorizontalOptions="FillAndExpand"/>
+              </StackLayout>
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+
+      <StackLayout Orientation="Horizontal" BackgroundColor="#ffffff" HeightRequest="65"
+                    IsVisible="{Binding ListViewPages}">
+        <StackLayout.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding SyncCmd, Mode=TwoWay}"></TapGestureRecognizer>
+        </StackLayout.GestureRecognizers>
+        <Image Source="Sync.png"
+                WidthRequest="70"
+                HeightRequest="30"
+                Scale="0.7"/>
+        <Label Text="{Binding SyncText}"
+                TextColor="#262626"
+                FontAttributes="Bold"
+                FontSize="14"
+                VerticalOptions="Center"
+                HorizontalOptions="FillAndExpand"/>
+      </StackLayout>
+
+
+      <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand"
+                   IsVisible="{Binding ListViewAccount}">
+          <StackLayout Orientation="Horizontal" BackgroundColor="#ffffff" HeightRequest="65">
+            <StackLayout.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding LogoutCmd, Mode=TwoWay}"></TapGestureRecognizer>
+            </StackLayout.GestureRecognizers>
+            <Image Source="Logout.png"
+                   WidthRequest="70"
+                   HeightRequest="30"
+                   Scale="0.7"/>
+            <Label Text="{Binding LogoutText}"
+                   TextColor="#262626"
+                   FontAttributes="Bold"
+                   FontSize="14"
+                   VerticalOptions="Center"
+                   HorizontalOptions="FillAndExpand"/>
+          </StackLayout>
+
+          <StackLayout Orientation="Horizontal" BackgroundColor="#ffffff" HeightRequest="65">
+            <StackLayout.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding EditProfileCmd, Mode=TwoWay}"></TapGestureRecognizer>
+            </StackLayout.GestureRecognizers>
+            <Image Source="Edit.png"
+                   WidthRequest="70"
+                   HeightRequest="30"
+                   Scale="0.7"/>
+            <Label Text="{Binding EditProfile}"
+                   TextColor="#262626"
+                   FontAttributes="Bold"
+                   FontSize="14"
+                   VerticalOptions="Center"
+                   HorizontalOptions="FillAndExpand"/>
+          </StackLayout>
+
+          <StackLayout Orientation="Horizontal" BackgroundColor="#ffffff" HeightRequest="65">
+            <StackLayout.GestureRecognizers>
+              <TapGestureRecognizer Command="{Binding RegisterCmd, Mode=TwoWay}"></TapGestureRecognizer>
+            </StackLayout.GestureRecognizers>
+            <Image Source="RegisterUser.png"
+                   WidthRequest="70"
+                   HeightRequest="30"
+                   Scale="0.7"/>
+            <Label Text="{Binding RegisterUser}"
+                   TextColor="#262626"
+                   FontAttributes="Bold"
+                   FontSize="14"
+                   VerticalOptions="Center"
+                   HorizontalOptions="FillAndExpand"/>
+          </StackLayout>
+      </StackLayout>
+
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:TravelStory.Model;assembly=TravelStory" x:Name="this"
+             x:Class="TravelStory.View.Travels"
+             Title="{Binding PageTitle}">
+
+  <ContentPage.ToolbarItems>
+    <controls:HideableToolbarItem  x:Name="ShowFiltersBtn" Icon="Filters.png" IsVisible="True" Parent="{x:Reference this}"
+                                   Command="{Binding ShowFiltersCmd, Mode=TwoWay}"
+                                   Order="Primary" Priority="0" />
+  </ContentPage.ToolbarItems>
+  
+  <ContentPage.Content>
+    <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#F5F5F5" Padding="3">
+      <!--FILTRI-->
+      <StackLayout x:Name="StackFilters" Orientation="Vertical" IsVisible="{Binding ShowFilters}" BackgroundColor="#FFF59D">
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+          <SearchBar x:Name="SearchBarEndedTravel"
+                           Placeholder="{Binding SearchTitle}"
+                           TextChanged="SearchBar_OnTextChanged"
+                           SearchButtonPressed="OnSearch"
+                           TextColor="#262626"></SearchBar>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+          <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Margin="7"></StackLayout>
+          <Label Text="{Binding DateFrom}" TextColor="#737373" VerticalOptions="Center" />
+          <DatePicker
+                  x:Name="DPBegin"
+                  Format="{Binding PropertyDateFormat}"
+                  Date="{Binding PropertyDateBegin}">
+          </DatePicker>
+          <Label Text="{Binding DateTo}" TextColor="#737373" VerticalOptions="Center" />
+          <DatePicker
+                  x:Name="DPEnd"
+                  Format="{Binding PropertyDateFormat}"
+                  Date="{Binding PropertyDateEnd}">
+          </DatePicker>
+        </StackLayout>
+      </StackLayout>    
+      <!--FINE FILTRI-->
+      <ListView x:Name="TravelsList"
+                SeparatorVisibility="None"
+                HasUnevenRows="True">       
+        <ListView.ItemTemplate>
+          <DataTemplate>           
+            <ViewCell>
+              
+              <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" Padding="3" >
+                <StackLayout Orientation="Vertical" VerticalOptions="Fill" HorizontalOptions="FillAndExpand" BackgroundColor="#ffffff" Spacing="3">
+                  <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="Large" TextColor="#262626"/>
+                  </StackLayout>
+
+                  <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label Text="{Binding RangeDatesString}" TextColor="#737373"/>
+                  </StackLayout>
+                </StackLayout>
+              </StackLayout>           
+              
+            </ViewCell>            
+          </DataTemplate>
+        </ListView.ItemTemplate>
+      </ListView>
+    </StackLayout>
+  </ContentPage.Content>
+
+</ContentPage>

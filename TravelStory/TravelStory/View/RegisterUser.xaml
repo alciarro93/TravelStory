@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TravelStory.Model;assembly=TravelStory"
+             x:Class="TravelStory.View.RegisterUser"
+             Title ="{Binding PageTitle}">
+  <ContentPage.Content>
+    <ScrollView>
+      
+      <StackLayout BackgroundColor="#F5F5F5" Padding="30" Spacing="10">
+        <Entry x:Name="RegName" Placeholder="{Binding Name}" Text="{Binding NameText}" Keyboard="Text"/>
+        <Entry x:Name="RegSurname" Placeholder="{Binding Surname}" Text="{Binding SurnameText}" Keyboard="Text"/>
+        <Entry x:Name="RegEmail" Placeholder="{Binding Email}" Text="{Binding EmailText}" Keyboard="Email" IsEnabled="{Binding EnableEmailEntry}"/>
+        <Entry x:Name="RegOldPsw" Placeholder="{Binding OldPassword}" Text="{Binding OldPasswordText}" IsPassword="true" Keyboard="Default"
+               IsVisible="{Binding VisibleOldPswEntry}"/>
+        <Entry x:Name="RegPsw" Placeholder="{Binding Password}" Text="{Binding PasswordText}" IsPassword="true" Keyboard="Default"/>
+        <Entry x:Name="RegPswRep" Placeholder="{Binding PasswordRepeat}" Text="{Binding PasswordRepeatText}" IsPassword="true" Keyboard="Default"/>
+        <Label Text="{Binding MandatoryEntries}" TextColor="#E53935" FontSize="18"></Label>
+        <Label Text="{Binding LeaveEntriesBlank}" TextColor="#b3b3b3" FontSize="18"></Label>
+        <Button x:Name="RegCmd" Text="{Binding RegisterUser}" TextColor="#262626" BackgroundColor="#FBC02D"
+                IsEnabled="{Binding EnableRegisterBtn}" Command="{Binding RegisterCmd, Mode=TwoWay}" />
+      </StackLayout>
+      
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>

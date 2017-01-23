@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TravelStory.View.TakeNote"
+             xmlns:controls="clr-namespace:TravelStory.Model;assembly=TravelStory" x:Name="this"
+             Title="{Binding PageTitle}">
+
+  <ContentPage.ToolbarItems>
+    <controls:HideableToolbarItem  x:Name="SaveNoteBtn" Icon="Save.png" IsVisible="{Binding ShowSave}" Parent="{x:Reference this}"
+                                   Command="{Binding SaveNoteCmd, Mode=TwoWay}"
+                                   Order="Primary" Priority="0" />
+  </ContentPage.ToolbarItems>
+
+  <ContentPage.Content>
+    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" BackgroundColor="#FAFAFA" Padding="10">      
+      <Editor x:Name="EditorNote" Text="{Binding Description}" VerticalOptions="FillAndExpand" 
+              TextColor="#262626" BackgroundColor="#ffffff"/>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

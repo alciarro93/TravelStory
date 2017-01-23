@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TravelStory.View.Settings"
+             Title="{Binding PageTitle}">
+  
+  <StackLayout Padding="15" BackgroundColor="#F5F5F5">
+
+    <StackLayout Padding="5">
+      <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+        <Label Text="{Binding GeneralSettings}" TextColor="#262626"
+               FontAttributes="Bold" FontSize="Large"></Label>
+      </StackLayout>
+      <!--<StackLayout Orientation="Horizontal" VerticalOptions="Center">
+        <Label Text="{Binding SyncText}" FontSize="17"></Label>
+        <Switch IsToggled="{Binding IsSyncTogg}" x:Name="SyncSwitch"></Switch>
+      </StackLayout>-->
+      <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+        <Label Text="{Binding DateFormatPickerTitle}" FontSize="17"></Label>
+        <Picker x:Name="DateFormatPicker" Title="{Binding DateFormatPickerTitle}"/>
+      </StackLayout>
+    </StackLayout>
+    
+    <StackLayout Margin="10">
+      <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+        <Label Text="{Binding Languages}" TextColor="#262626"
+               FontAttributes="Bold" FontSize="Large"></Label>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Image x:Name="FlagIT" Aspect="AspectFit"
+               Source="{Binding FlagITico}"
+               WidthRequest="70"
+               HeightRequest="30"/>
+        <Button x:Name="ItalianBtn" Text="Italiano" Command="{Binding ChangeLanguageITCmd, Mode= TwoWay}" TextColor ="#262626"></Button>
+      </StackLayout>
+      <StackLayout Orientation="Horizontal">
+        <Image x:Name="FlagEN" Aspect="AspectFit"
+               Source="{Binding FlagENico}"
+               WidthRequest="70"
+               HeightRequest="30"/>
+        <Button x:Name="EnglishBtn" Text="English" Command="{Binding ChangeLanguageENCmd, Mode= TwoWay}" TextColor ="#262626"></Button>
+      </StackLayout>
+    </StackLayout>
+    
+  </StackLayout>
+  
+</ContentPage>
